@@ -50,8 +50,7 @@ impl<S: Stream> Stream for DebounceTime<S> {
 
         match this.state {
             State::HasNext => {
-                let t = ready!(this.interval.poll_next(cx));
-                println!("t: {:?}", t);
+                ready!(this.interval.poll_next(cx));
                 if let Some(item) = this.item.take() {
                     Poll::Ready(Some(item))
                 } else {
@@ -81,9 +80,9 @@ mod tests {
 
     #[tokio::test]
     async fn debounce_time_should_work() {
-        let mut stream = interval_value(Duration::from_millis(1), 1, 1)
+        let mut stream = interval_value(Duration::from_millis(10), 1, 1)
             .take(30)
-            .debounce_time(Duration::from_millis(10));
+            .debounce_time(Duration::from_millis(100));
 
         assert_eq!(stream.next().await, Some(1));
         assert_eq!(stream.next().await, Some(11));
@@ -97,7 +96,7 @@ mod tests {
     async fn debounce_time_should_work_with_empty_stream() {
         let mut stream = IntervalStream::new(interval(Duration::from_millis(1)))
             .take(0)
-            .debounce_time(Duration::from_millis(100));
+            .debounce_time(Duration::from_millis(10));
 
         assert_eq!(stream.next().await, None);
     }
