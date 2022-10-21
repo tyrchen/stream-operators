@@ -1,6 +1,6 @@
 # Stream Operators
 
-This is a collection of stream operators for rust/tokio. Though the operators are coming from the [ReactiveX](http://reactivex.io/) world, I'm not trying to reinvent the observable ecosystem for rust. If you need that, you could use [rxrust](https://docs.rs/rxrust/latest/rxrust/). For this repom I'm just trying to provide a set of stream operators which could be used for [Stream](https://docs.rs/futures/latest/futures/stream/trait.Stream.html).
+This is a collection of selected rxjs operators for rust standard Stream. Though the operators are coming from the [ReactiveX](http://reactivex.io/) world, I'm not trying to reinvent the observable ecosystem for rust. If you need that, you could use [rxrust](https://docs.rs/rxrust/latest/rxrust/). For this repom I'm just trying to provide a set of stream operators which could be used for [Stream](https://docs.rs/futures/latest/futures/stream/trait.Stream.html).
 
 ## Supported Operators
 
