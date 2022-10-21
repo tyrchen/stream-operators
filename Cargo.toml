@@ -2,8 +2,16 @@
 name = "stream-operators"
 version = "0.1.0"
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+license = "MIT"
+documentation = "https://docs.rs/stream-operators"
+repository = "https://github.com/tyrchen/stream-operators"
+homepage = "https://github.com/tyrchen/stream-operators"
+description = """
+a collection of selected rxjs operators for rust standard Stream
+"""
+readme = "README.md"
+categories = ["asynchronous"]
+keywords = ["reactive", "stream", "operator"]
 
 [dependencies]
 pin-project-lite = "0.2.9"
