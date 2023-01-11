@@ -1,6 +1,6 @@
 [package]
 name = "stream-operators"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 license = "MIT"
 documentation = "https://docs.rs/stream-operators"
@@ -15,9 +15,9 @@ keywords = ["reactive", "stream", "operator"]
 
 [dependencies]
 pin-project-lite = "0.2.9"
-tokio = "1.21.2"
+tokio = "1.24.1"
 tokio-stream = "0.1.11"
 
 [dev-dependencies]
 futures = "0.3.25"
-tokio = { version = "1.21.2", features = ["rt", "macros"] }
+tokio = { version = "1.24.1", features = ["rt", "macros"] }
